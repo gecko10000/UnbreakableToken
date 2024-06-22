@@ -1,0 +1,6 @@
+name: UnbreakableToken
+main: gecko10000.unbreakabletoken.UnbreakableToken
+version: 0.1
+api-version: 1.13
+depend:
+  - RedLib

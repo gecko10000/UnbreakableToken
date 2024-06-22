@@ -1,0 +1,7 @@
+unbreakabletoken {
+    give player:player?(context self) int:amount?(1) {
+        permission unbreakabletoken.give
+        help Give a player an unbreakable token
+        hook give
+    }
+}

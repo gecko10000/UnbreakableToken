@@ -1,0 +1,9 @@
+item:
+  material: FIRE_CHARGE
+  name: "<#0088b3><bold>Unbreakable Token"
+  lore:
+    - "<yellow>Makes an item unbreakable."
+    - "<yellow>Right click to pick an item."
+  is_unbreakable: false
+  is_enchanted: true
+gui_name: "<#0088b3>Make Item Unbreakable"

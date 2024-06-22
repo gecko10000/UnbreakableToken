@@ -29,4 +29,10 @@ public class CommandHandler {
         );
     }
 
+    @CommandHook("reload")
+    public void reload(CommandSender sender) {
+        plugin.reloadConfig();
+        sender.sendMessage(plugin.miniMessage.deserialize("<green>Configs reloaded."));
+    }
+
 }

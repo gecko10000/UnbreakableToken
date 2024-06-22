@@ -23,8 +23,15 @@ public class UnbreakableToken extends JavaPlugin {
 
     @Override
     public void onEnable() {
+        reloadConfig();
         new Listeners(this);
         new CommandHandler(this);
+    }
+
+    @Override
+    public void reloadConfig() {
+        saveDefaultConfig();
+        super.reloadConfig();
     }
 
     ItemStack getItem() {

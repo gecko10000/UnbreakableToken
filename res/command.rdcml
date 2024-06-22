@@ -4,4 +4,9 @@ unbreakabletoken {
         help Give a player an unbreakable token
         hook give
     }
+    reload {
+        permission unbreakabletoken.reload
+        help Reload the config
+        hook reload
+    }
 }

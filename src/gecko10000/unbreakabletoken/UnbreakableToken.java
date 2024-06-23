@@ -40,11 +40,11 @@ public class UnbreakableToken extends JavaPlugin {
         meta.displayName(miniMessage.deserialize(getConfig().getString("item.name")).decorationIfAbsent(TextDecoration.ITALIC, TextDecoration.State.FALSE));
         List<Component> lore = getConfig().getStringList("item.lore").stream().map(s -> miniMessage.deserialize(s).decorationIfAbsent(TextDecoration.ITALIC, TextDecoration.State.FALSE)).toList();
         meta.lore(lore);
-        if (getConfig().getBoolean("is_enchanted")) {
+        if (getConfig().getBoolean("item.is_enchanted")) {
             meta.addEnchant(Enchantment.ARROW_INFINITE, 1, true);
             meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
         }
-        if (getConfig().getBoolean("is_unbreakable")) {
+        if (getConfig().getBoolean("item.is_unbreakable")) {
             meta.setUnbreakable(true);
         }
         meta.getPersistentDataContainer().set(tokenKey, PersistentDataType.BOOLEAN, true);

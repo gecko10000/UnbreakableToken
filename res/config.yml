@@ -1,5 +1,5 @@
 item:
-  material: FIRE_CHARGE
+  material: NETHERITE_SCRAP
   name: "<#0088b3><bold><lang:item.unbreakable> Token"
   lore:
     - "<yellow>Makes an item unbreakable."

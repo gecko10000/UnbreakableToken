@@ -1,5 +1,8 @@
 package gecko10000.unbreakabletoken;
 
+import gecko10000.geckolib.inventorygui.InventoryGUI;
+import gecko10000.geckolib.inventorygui.ItemButton;
+import gecko10000.geckolib.misc.ItemUtils;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.TextDecoration;
 import net.kyori.adventure.text.minimessage.tag.resolver.Placeholder;
@@ -11,9 +14,6 @@ import org.bukkit.inventory.InventoryHolder;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.jetbrains.annotations.NotNull;
-import redempt.redlib.inventorygui.InventoryGUI;
-import redempt.redlib.inventorygui.ItemButton;
-import redempt.redlib.itemutils.ItemUtils;
 
 public class UnbreakabilityGUI implements InventoryHolder {
 

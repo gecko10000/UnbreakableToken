@@ -5,16 +5,12 @@ import net.kyori.adventure.text.format.TextDecoration;
 import net.kyori.adventure.text.minimessage.MiniMessage;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
-import org.bukkit.enchantments.Enchantment;
-import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.persistence.PersistentDataType;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import javax.naming.Name;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class UnbreakableToken extends JavaPlugin {
 
@@ -25,7 +21,7 @@ public class UnbreakableToken extends JavaPlugin {
     public void onEnable() {
         reloadConfig();
         new Listeners(this);
-        new CommandHandler(this);
+        new CommandHandler().register();
     }
 
     @Override
@@ -40,13 +36,8 @@ public class UnbreakableToken extends JavaPlugin {
         meta.displayName(miniMessage.deserialize(getConfig().getString("item.name")).decorationIfAbsent(TextDecoration.ITALIC, TextDecoration.State.FALSE));
         List<Component> lore = getConfig().getStringList("item.lore").stream().map(s -> miniMessage.deserialize(s).decorationIfAbsent(TextDecoration.ITALIC, TextDecoration.State.FALSE)).toList();
         meta.lore(lore);
-        if (getConfig().getBoolean("item.is_enchanted")) {
-            meta.addEnchant(Enchantment.ARROW_INFINITE, 1, true);
-            meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
-        }
-        if (getConfig().getBoolean("item.is_unbreakable")) {
-            meta.setUnbreakable(true);
-        }
+        meta.setEnchantmentGlintOverride(getConfig().getBoolean("item.is_enchanted"));
+        meta.setUnbreakable(getConfig().getBoolean("item.is_unbreakable"));
         meta.getPersistentDataContainer().set(tokenKey, PersistentDataType.BOOLEAN, true);
         item.setItemMeta(meta);
         return item;
